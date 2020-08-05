@@ -11,8 +11,8 @@ An Email Editor with Next Word Prediction
 
 ## Images
 
-![First Page](/Client/assets/1.png)
-![Second Page](/Client/assets/2.png)
-![Third Page](/Client/assets/3.png)
-![Fourth Page](/Client/assets/4.png)
+<img src="Client/assets/1.png" width="250px">
+<img src="Client/assets/2.png" width="250px">
+<img src="Client/assets/3.png" width="250px">
+<img src="Client/assets/4.png" width="250px">
 
