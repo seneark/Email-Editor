@@ -11,8 +11,10 @@ An Email Editor with Next Word Prediction
 
 ## Images
 
-<img src="Client/assets/1.png" width="250px">
-<img src="Client/assets/2.png" width="250px">
-<img src="Client/assets/3.png" width="250px">
-<img src="Client/assets/4.png" width="250px">
+Intro Page             |  Email Composer Page | Next Word Suggestion and Save to Draft | Drafts
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+<img src="Client/assets/1.png" width="250px"> | <img src="Client/assets/2.png" width="250px"> |<img src="Client/assets/3.png" width="250px"> | <img src="Client/assets/4.png" width="250px">
+
+
+
 
