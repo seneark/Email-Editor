@@ -1,9 +1,12 @@
 # Email-Editor
 An Email Editor with Next Word Prediction
 
+# Youtube Video
+[Click Here To Watch It](https://www.youtube.com/watch?v=RPTO0i6DrEo)
+
 ## How to Run this Website
 1. Clone this Repo to your Local Machine.
-2.Open the Terminal in Client and backend folder.
+2. Open the Terminal in Client and backend folder.
 3. Type ```npm start``` in the Client Folder Terminal and ```pip install -r requirements.txt``` in backend folder Terminal.
 4. Download the Expo App from Play Store.
 5. Scan the Qr Code shown in the Client Folder Terminal.
