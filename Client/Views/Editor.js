@@ -41,6 +41,7 @@ class Editor extends Component {
             input: "",
             caretPos: 0,
             predictions: [],
+            sentPredictions: [],
             inputHeight: 40,
             isDraft: false
         };
@@ -68,6 +69,7 @@ class Editor extends Component {
             .then((response) => {
                 // console.log(response.data);
                 this.setState({predictions: response.data["results"].slice(0, 3)});
+                this.setState({sentPredictions: response.data["sentence"].slice(0, 2)});
                 // console.log(this.state.predictions);
             })
             .catch((error) => console.log(error));
@@ -184,6 +186,17 @@ class Editor extends Component {
                             );
                         })}
                     </View>
+                    {this.state.sentPredictions ?<View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: "90%"}}>
+                        {this.state.sentPredictions.map((item, idx) => {
+                            return (
+                                <Button key={idx} type="clear"
+                                        buttonStyle={{paddingHorizontal: 20, textAlignVertical: "center", height: 35}}
+                                        title={item}
+                                        onPress={() => this.ChangeSentence({item})}/>
+                            );
+                        })}
+                    </View> : null}
+                    
                     <View
                         style={{
                             width: "95%",

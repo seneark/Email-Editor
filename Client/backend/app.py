@@ -11,14 +11,18 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 data = {}
+pentaData = {}
 
 
 @app.route('/api/import/')
 @cross_origin()
 def import_data():
+    global pentaData
     global data
     with open('data.p', 'rb') as fp:
         data = pickle.load(fp)
+    with open('pentagram81.p', 'rb') as fp:
+        pentaData = pickle.load(fp)
     json = {
         "name": "imported the predictions",
         "error": "No error",
@@ -30,6 +34,7 @@ def import_data():
 @cross_origin()
 def prediction():
     global data
+    global pentaData
     textInput = []
     obj = request.get_json(silent=True)
     obj["input"] = obj["input"][0:obj["caretPos"]]
@@ -55,10 +60,19 @@ def prediction():
                 predictedWords.append(results[i][0])
     except:
         predictedWords = ["the", "this", "that"]
-
+    try:
+        predictedPentagram = []
+        result = pentaData[(textInput[0], textInput[1])]
+        for i in range(len(result)):
+            predictedPentagram.append(str(result[i][0]))
+            # print(result[i][0])
+        print(predictedPentagram)
+    except :
+        predictedPentagram = [""]
     return {
         "input": str(textInput),
-        "results": predictedWords
+        "results": predictedWords,
+        "sentence": predictedPentagram
     }
 
 
